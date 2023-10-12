@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="forget.css">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forget</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <span><button onclick="PlayStop()" type="button" class="a"><i class="fa-sharp fa-solid fa-volume-off"></i></button>
+        <audio id="audioID" autoplay loop>
+            <source src="audio/audio1.mp3" type="audio/mp3">
+        </audio></span>
+    <div class="title">
+        <div class="d1">
+            <label>Enter your email</label>
+            <input type="text" id="na" class="d2" placeholder="Enter your Email" required>
+        </div>
+        <div class="title1">
+            <button onclick="fun()" class="btn1">Click</button>
+             <a href="./newpassword.html" id="dat" style="display:none;"><button
+                    class="btn2">Next</button></a>
+        </div> 
+        </div>
+    <script>
+        var myaudio = document.getElementById("audioID");
+
+        function PlayStop() {
+            return myaudio.paused ? myaudio.play() : myaudio.pause();
+        };
+    </script>
+    <script>
+
+        function fun() {
+            var email = /^[a-zA-Z0-9.!#$%&'+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)$/;
+            var a = document.getElementById("na").value;
+            var em = localStorage.getItem("data");
+            var em1 = JSON.parse(em);
+           
+            for (var m in em1) {
+                if (a == em1[m].key8) {
+                    var k1 = em1[m].key8;
+                     document.getElementById('dat').style.display='block';
+                }
+                
+            }
+            if(a==k1){
+                alert("Validation Successfullly");
+            }
+            else{
+                alert("Check the Emailid");
+                document.getElementById('na').value="";
+            }
+        }
+
+    </script>

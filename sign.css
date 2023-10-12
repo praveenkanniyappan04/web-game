@@ -1,0 +1,183 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    width: 100%;
+    height: 463px;
+    background-image: url('image/lobbybg.jpg');
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+.ac {
+    margin: 10 auto;
+    text-align: center;
+    font-size: 3vw;
+    color: rgb(252, 7, 7);
+}
+
+.container1 {
+    display: flex;
+    justify-content: space-around;
+    margin: 50px auto;
+    width: 65vw;
+    height: 53vh;
+    background-color: rgba(193, 193, 188, 0.15);
+    border-radius: 20px;
+}
+
+.tooltip {
+    font-size: 2vw;
+    color: gold;
+
+}
+
+.tooltip1 {
+    font-size: 2vw;
+    color: gold;
+
+}
+
+.int1 {
+    width: 15vw;
+    height: 4vh;
+    font-size: 1.5vw;
+    border-radius: 10px;
+
+}
+
+.int2 {
+    width: 15vw;
+    height: 4vh;
+    font-size: 1.5vw;
+    border-radius: 10px;
+
+}
+
+
+.Profile {
+    background: linear-gradient(to right, rgb(228, 248, 5), rgb(244, 82, 6));
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    font-size: 2vw;
+    margin-top: 0;
+    text-align: center;
+}
+
+#m1 {
+    font-size: 1.5vw;
+    border-radius: 5px;
+    padding: 5px 20px;
+    margin-top: -2vh;
+    margin-left: 45vw;
+}
+
+.body {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+
+@media screen and (max-width: 1025px) {
+    .ac {
+        margin: 10px auto;
+        font-size: 4vw;
+    }
+
+    .container1 {
+        margin: 40px auto;
+        justify-content: space-between;
+        width: 90vw;
+        height: 43vh;
+        padding: 15px;
+    }
+
+    .tooltip {
+        font-size: 3vw;
+    }
+
+    .tooltip1 {
+        font-size:3vw;
+        margin-left: 10px;
+    }
+
+    .int1 {
+        width: 35vw;
+        height: 4vh;
+        font-size: 2.5vw;
+
+    }
+
+    .int2 {
+        width: 35vw;
+        height: 4vh;
+        font-size: 2.5vw;
+
+    }
+    .Profile {
+        font-size: 3vw;
+        margin-top:-20px;
+        text-align: center;
+    }
+    #m1 {
+        font-size: 2.5vw;
+        border-radius: 10px;
+    }
+}
+@media screen and (max-width: 600px) {
+    .ac {
+        margin: 10px auto;
+        font-size: 4vw;
+    }
+
+    .container1 {
+        margin: 70px auto;
+        justify-content: space-between;
+        width: 90vw;
+        height: 35vh;
+        padding: 15px;
+    }
+
+    .tooltip {
+        font-size: 3.5vw;
+    }
+
+    .tooltip1 {
+        font-size: 3.5vw;
+        color: gold;
+        margin-left: 10px;
+
+
+    }
+
+    .int1 {
+        width: 38vw;
+        height: 4vh;
+        font-size: 2.5vw;
+
+    }
+
+    .int2 {
+        width: 35vw;
+        height: 4vh;
+        font-size: 2.5vw;
+
+    }
+    .Profile {
+        font-size: 3vw;
+        margin-top:-20px;
+        text-align: center;
+    }
+    #m1 {
+        font-size: 4vw;
+        border-radius: 10px;
+    }
+   
+
+
+}

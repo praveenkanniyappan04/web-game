@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign</title>
+    <script src="store.js"></script>
+    <link rel="icon" href="l2.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="sign.css">
+    <script src="store.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <h1 class="ac">Create Your Gaming Account</h1><br><br>
+    <div id="container">
+        <div id="c2">
+            <h1 class="Profile">Update Your Profile</h1>
+            <div class="container1">
+
+                <div class="tooltip">
+                    <lable> Enter your FirstName</lable><br>
+                    <input type="text" placeholder="First" class="int1" id="val1"><br>
+                    <lable> Enter your SecondName</lable><br>
+                    <input type="text" placeholder="Second" class="int1" id="val2"><br>
+                    <lable>Enter your Userid</lable><br>
+                    <input type="text" class="int1" id="val3" placeholder="Enter your username" required><br>
+                    <lable>Create your Password</lable><br>
+                    <input type="text" class="int1" id="val4" placeholder="Enter your passsword" required><br>
+                    <lable>Confirm your Password</lable><br>
+                    <input type="password" class="int1" id="val5" placeholder="Enter your Confirm passsword"
+                        required><br>
+                </div>
+                <div class="tooltip1">
+                    <label>Date of Birth</label><br>
+                    <input type="date" placeholder="Day" class="int2" id="val6"><br>
+                    <lable>Mobile Number</lable><br>
+                    <input type="text" id="val7" class="int2" placeholder="Enter your number"><br>
+                    <lable>Your current email id</lable><br>
+                    <input type="email" id="val8" class="int2" placeholder="Enter your Email"><br>
+                    <label>Location</label><br>
+                    <select class="int2" id="val9">
+                        <option value="">Select your current location</option>
+                        <option>India</option>
+                        <option>Australia</option>
+                        <option>Bhutan</option>
+                        <option>Brazil</option>
+                        <option>Canada</option>
+                        <option>China</option>
+                        <option>Others</option>
+                    </select><br>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button onclick="getdata()" id="m1">Next</button>
+
+    <p id="pra"></p>
+    <script>
+       
+        function getdata() {
+            var element1 = document.getElementById("val1").value;
+            var element2 = document.getElementById("val2").value;
+            var element3 = document.getElementById("val3").value;
+            var element4 = document.getElementById("val4").value;
+            var element5 = document.getElementById("val5").value;
+            var element6 = document.getElementById("val6").value;
+            var element7 = document.getElementById("val7").value;
+            var element8 = document.getElementById("val8").value;
+            var element9 = document.getElementById("val9").value;
+            var data1 = localStorage.getItem("data");
+            var data2 = JSON.parse(data1) || []
+            data2.push({key1:element1,key2:element2,key3:element3,key4:element4,key5:element5,key6:element6,key7:element7,key8:element8,key9:element9})
+            var data3 = JSON.stringify(data2);
+            localStorage.setItem("data",data3);
+            document.getElementById("val1").value="";
+            document.getElementById("val2").value="";
+            document.getElementById("val3").value="";
+            document.getElementById("val4").value="";
+             document.getElementById("val5").value="";
+            document.getElementById("val6").value="";
+           document.getElementById("val7").value="";
+            document.getElementById("val8").value="";
+           document.getElementById("val9").value="";
+           window.location.href="next.html"
+        }
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Next</title>
+    <script src="store.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="next.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <button onclick="PlayStop()" type="button" id="a3"><i class="fa-sharp fa-solid fa-volume-off"></i></button>
+
+    <audio id="audioID" autoplay loop>
+        <source src="audio/audio1.mp3" type="audio/mp3">
+    </audio>
+    <p class="g1">verifed your data's </p>
+    <div class="gt1">
+        <table style="width: 300px;">
+            <tr>
+                <th>FirstName</th>
+                <td id="phn1"></td>
+            </tr>
+            <tr>
+                <th>LastName</th>
+                <td id="phn2"></td>
+            </tr>
+            <tr>
+                <th>Userid</th>
+                <td id="phn3"></td>
+            </tr>
+            <tr>
+                <th>Passsword</th>
+                <td id="phn4"></td>
+            </tr>
+            <tr>
+                <th>ComformPassword</th>
+                <td id="phn5"></td>
+            </tr>
+            <tr>
+                <th>DOB</th>
+                <td id="phn6"></td>
+            </tr>
+            <tr>
+                <th>PhoneNumber</th>
+                <td id="phn7"></td>
+            </tr>
+
+            <tr>
+                <th>Emailid</th>
+                <td id="phn8"></td>
+            </tr>
+            <tr>
+                <th>Location</th>
+                <td id="phn9"></td>
+            </tr>
+        </table>
+    </div>
+    <div class="btn">
+    <button onclick="retrive()" onclick="checkButton()" class="btn1">GET YOUR DATA</button>
+    <a style="display: none;" href="index.html" id="sign" onclick="alert('validation successfully')"> <button
+            class="btn2">Signin</button></a>
+        </div>
+    <p id="d2"></p>
+    <script>
+        var myaudio = document.getElementById("audioID");
+
+        function PlayStop() {
+
+            return myaudio.paused ? myaudio.play() : myaudio.pause();
+        };
+     function retrive() {
+    let text = localStorage.getItem("data");
+    let obj = JSON.parse(text);
+    for(var p in obj){
+        var FirstName = obj[p].key1;
+        var LastName = obj[p].key2;
+        var Userid = obj[p].key3;
+        var Passsword = obj[p].key4;
+        var ComformPassword = obj[p].key5;
+        var DOB = obj[p].key6;
+        var PhoneNumber = obj[p].key7;
+        var Emailid = obj[p].key8;
+        var Location = obj[p].key9;
+   
+    document.getElementById("phn1").innerHTML = FirstName;
+    document.getElementById("phn2").innerHTML = LastName;
+    document.getElementById("phn3").innerHTML = Userid;
+    document.getElementById("phn4").innerHTML = Passsword;
+    document.getElementById("phn5").innerHTML = ComformPassword;
+    document.getElementById("phn6").innerHTML = DOB;
+    document.getElementById("phn7").innerHTML = PhoneNumber;
+    document.getElementById("phn8").innerHTML = Emailid;
+    document.getElementById("phn9").innerHTML = Location;
+    document.getElementById('sign').style.display = 'block';
+}
+
+}
+    </script>
+
+</body>
+
+</html>

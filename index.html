@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GamingWorld</title>
+    <link rel="icon" href="image/b1.jpg">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <span> <img src="image/lobbylogo1.jpg" alt="" id="logo"></span>
+    <span><button onclick="PlayStop()" type="button" id="a3"><i class="fa-sharp fa-solid fa-volume-off"></i></button>
+
+        <audio id="audioID" autoplay loop>
+            <source src="audio/audio1.mp3" type="audio/mp3">
+        </audio></span>
+
+    <p class="d0">WELCOME TO GAMING <span id="w">WORLD</span></p>
+    <h1 class="Profile">Update Your Profile</h1>
+    <div class="body">
+        <input type="file" name="image" id="image" accept="image/*" />
+        <div id="preview">
+            <div id="avatar"></div>
+            <button id="upload-button" aria-labelledby="image" aria-describedby="image">
+                <i class="fa-solid fa-pencil"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="logo3">
+        <div class="form">
+            <div class="d1">User-id</div>
+            <div class="d2"><input type="text" class="d4" id="value1" required></div>
+        </div>
+        <div class="form">
+            <div class="d1">Password</div>
+            <div class="d2"><input type="password" class="d5" id="value2" required></div>
+        </div>
+        <button class="btn1" onclick="move()" href="lobby.html">Submit</button>
+    </div>
+    <div class="logo2">
+        <a href="forget.html">forget password</a>&nbsp;&nbsp;
+        <a href="sign.html">Create account</a>
+    </div>
+    <script>
+
+        var myaudio = document.getElementById("audioID");
+
+        function PlayStop() {
+            return myaudio.paused ? myaudio.play() : myaudio.pause();
+        };
+    </script>
+    <script>
+        const UPLOAD_BUTTON = document.getElementById("upload-button");
+        const FILE_INPUT = document.querySelector("input[type=file]");
+        const AVATAR = document.getElementById("avatar");
+
+        UPLOAD_BUTTON.addEventListener("click", () => FILE_INPUT.click());
+
+        FILE_INPUT.addEventListener("change", event => {
+            const file = event.target.files[0];
+
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+
+            reader.onloadend = () => {
+                AVATAR.setAttribute("aria-label", file.name);
+                AVATAR.style.background = `url(${reader.result}) center center/cover`;
+            };
+        });
+
+
+        function move() {
+            var user1 = document.getElementById('value1').value;
+            var user2 = document.getElementById('value2').value;
+
+            const jsonObj = localStorage.getItem("data");
+            const obj1 = JSON.parse(jsonObj);
+
+            const ind = localStorage.getItem("pass");
+            const ind1 = JSON.parse(ind);
+            for (var i in obj1) {
+                if (user1 == obj1[i].key3 && user2 == obj1[i].key5) {
+                    var d1 = obj1[i].key3;
+                    var d2 = obj1[i].key5;
+                    window.location.href = "lobby.html";
+                    break;
+                }
+            }
+           
+            for (var j in ind1) {
+                if ( (user2 == ind1[j].pa1)) {
+                    var d3= ind1[j].pa1;
+                    window.location.href = "lobby.html";
+                    break;
+                }
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>
